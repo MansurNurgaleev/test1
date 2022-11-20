@@ -9,4 +9,4 @@ RUN pip install -r /usr/src/req.txt
 COPY . /usr/src/project
 
 EXPOSE 8000
-CMD python manage.py migrate && python manage.py create_superuser && python manage.py runserver 0.0.0.0:8000
+CMD python manage.py migrate && python manage.py create_superuser && python manage.py collectstatic && python manage.py runserver 0.0.0.0:8000

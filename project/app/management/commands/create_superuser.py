@@ -9,4 +9,5 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         User = get_user_model()
-        User.objects.create_superuser(username=os.getenv('DJANGO_SU_NAME'), password=os.getenv('DJANGO_SU_PASSWORD'))
+        if not User.objects.filter(username=os.getenv('DJANGO_SU_NAME')).exists():
+            User.objects.create_superuser(username=os.getenv('DJANGO_SU_NAME'), password=os.getenv('DJANGO_SU_PASSWORD'))
