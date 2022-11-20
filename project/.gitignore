@@ -1,0 +1,9 @@
+# Default ignored files
+/shelf/
+__pycache__/
+/.pytest_cache/
+/workspace.xml
+poetry.lock/
+/.mypy_cache/
+/.idea/
+/venv/
